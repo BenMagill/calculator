@@ -7,13 +7,13 @@ let mainWindow;
 const createWindow = () => {
 
   
-  mainWindow = new BrowserWindow({ width: 312, height: 493, show: false, resizable: false, webPreferences: {nodeIntegration: true, preload: path.join(__dirname, "/preload.js"), websecurity: false} });
+  mainWindow = new BrowserWindow({ width: 312, height: 505, show: false, resizable: false, webPreferences: {nodeIntegration: true, preload: path.join(__dirname, "/preload.js"), websecurity: false} });
 
   mainWindow.loadURL(
     !app.isPackaged
       ? process.env.ELECTRON_START_URL
       : url.format({
-          pathname: path.join(__dirname, '../build/index.html'),
+          pathname: path.join(__dirname, '../index.html'),
           protocol: 'file:',
           slashes: true,
         })
